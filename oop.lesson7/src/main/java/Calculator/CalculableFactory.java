@@ -1,7 +1,5 @@
 package Calculator;
 
-import Calculator.adapter.Calculator2;
-
 public class CalculableFactory implements ICalculableFactory{
 
     @Override

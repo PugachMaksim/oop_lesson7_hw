@@ -25,7 +25,7 @@ public final class Calculator implements Calculable{
 
     /**
      * метод умножения
-     * @param arg многжитель
+     * @param arg множитель
      * @return
      */
     @Override
@@ -45,12 +45,24 @@ public final class Calculator implements Calculable{
         return this;
     }
 
+    /**
+     * метод вычетания
+     * @param arg делитель
+     * @return
+     */
+    @Override
+    public Calculable minus(int arg) {
+        primaryArg -= arg;
+        return this;
+    }
+
     /**+
      * метод получения последнего результата вычесления
-     * @return
+     * @return вычетаемое
      */
     @Override
     public int getResult() {
         return primaryArg;
     }
 }
+

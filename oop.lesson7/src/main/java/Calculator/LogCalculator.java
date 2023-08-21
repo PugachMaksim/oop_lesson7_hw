@@ -1,10 +1,9 @@
 package Calculator;
 
-public class LogCalculator implements Calculable{
+public class LogCalculator implements Calculable {
 
     private Calculable decorated;
     private Loggable logger;
-
 
     public LogCalculator(Calculable decorated, Loggable logger){
         this.decorated = decorated;
@@ -28,7 +27,7 @@ public class LogCalculator implements Calculable{
         return result;
     }
 
-    @Override
+
     public Calculable division(int arg) {
         int firstArg = decorated.getResult();
         logger.log(String.format("Первое значение %d. Деление на %d", firstArg, arg));
@@ -36,6 +35,15 @@ public class LogCalculator implements Calculable{
         logger.log(String.format("Разделили"));
         return result;
     }
+
+    public Calculable minus(int arg) {
+        int firstArg = decorated.getResult();
+        logger.log(String.format("Первое значение %d. Минус %d", firstArg, arg));
+        Calculable result = decorated.minus(arg);
+        logger.log(String.format("Вычли"));
+        return result;
+    }
+
 
     @Override
     public int getResult() {
